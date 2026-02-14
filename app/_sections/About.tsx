@@ -1,0 +1,135 @@
+import { Fragment } from "react";
+import { ChevronDown } from "lucide-react";
+import SectionShell from "../_components/SectionShell";
+
+const SKILLS = [
+  "Figma",
+  "Shopify",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TailwindCSS",
+  "C#",
+  "Critical Thinking",
+  "Teamwork",
+  "Problem Solving",
+  "Communication",
+] as const;
+
+const LANGUAGES = [
+  "English",
+  "Chinese",
+  "German",
+  "Burmese",
+  "Japanese",
+] as const;
+
+const EDUCATION = [
+  {
+    degree: "Bachelor of Science (Hons) in Computer Science",
+    institution: "Coventry University",
+    when: "Aug 2023",
+    where: "Singapore",
+  },
+  {
+    degree: "Level 4 Diploma in Computing",
+    institution: "NCC Education",
+    when: "Nov 2020",
+    where: null,
+  },
+  {
+    degree: "Currently studying",
+    institution: "FHOO (Fachhochschule Oberösterreich)",
+    when: null,
+    where: "Austria",
+  },
+] as const;
+
+export default function About() {
+  return (
+    <SectionShell className="grid gap-20">
+      <h2 className="text-xl md:text-4xl font-sans mb-6 border-b-2 pb-7">
+        About me
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-x-28">
+        <p className="text-base md:text-lg leading-relaxed font-sans mb-10">
+          I am a UI/UX designer with a Bachelor&apos;s degree in Computer
+          Science from Coventry University. I currently work as Project Manager
+          and Junior Web Developer at Pocket Nicotine, where I use Figma and
+          Shopify and work with inventory management systems. I am proficient in
+          HTML, CSS, and JavaScript and focus on intuitive, user-centered
+          design. My education and professional experience drive me to deliver
+          exceptional user experiences.
+        </p>
+
+        <div className="border-(--foreground)/20">
+          <details className="group border-b border-(--foreground)/20">
+            <summary className="list-none cursor-pointer py-4 font-sans text-base md:text-lg flex items-center justify-between gap-2">
+              <span>Language proficiency</span>
+              <ChevronDown className="size-5 shrink-0 text-(--foreground)/60 group-open:rotate-180 transition-transform" />
+            </summary>
+            <div className="pb-4 pl-0 font-sans text-base text-(--foreground)/90">
+              <ul className="space-y-1">
+                {LANGUAGES.map((lang) => (
+                  <li key={lang}>{lang}</li>
+                ))}
+              </ul>
+            </div>
+          </details>
+
+          <details className="group border-b border-(--foreground)/20">
+            <summary className="list-none cursor-pointer py-4 font-sans text-base md:text-lg flex items-center justify-between gap-2">
+              <span>Education</span>
+              <ChevronDown className="size-5 shrink-0 text-(--foreground)/60 group-open:rotate-180 transition-transform" />
+            </summary>
+            <div className="pb-4 pl-0 font-sans text-base text-(--foreground)/90 space-y-4">
+              {EDUCATION.map((entry, i) => (
+                <div key={i}>
+                  <p className="font-medium">{entry.degree}</p>
+                  <p>{entry.institution}</p>
+                  {(entry.when || entry.where) && (
+                    <p className="text-(--foreground)/80">
+                      {[entry.when, entry.where].filter(Boolean).join(" · ")}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div
+        className="overflow-hidden w-full"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+        }}
+      >
+        <div
+          className="flex w-max items-center gap-10 py-2"
+          style={{
+            animation: "marquee 40s linear infinite",
+            willChange: "transform",
+          }}
+        >
+          {[...SKILLS, ...SKILLS].map((skill, i) => (
+            <Fragment key={i}>
+              {i > 0 && (
+                <span
+                  className="size-1.5 shrink-0 rounded-full bg-black w-1.5 h-1.5 border"
+                  aria-hidden
+                />
+              )}
+              <span className="shrink-0 font-sans text-lg md:text-xl text-(--foreground)/90 whitespace-nowrap">
+                {skill}
+              </span>
+            </Fragment>
+          ))}
+        </div>
+      </div>
+    </SectionShell>
+  );
+}
