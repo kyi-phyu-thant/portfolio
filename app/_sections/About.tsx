@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Download } from "lucide-react";
 import SectionShell from "../_components/SectionShell";
 
 const SKILLS = [
@@ -52,16 +52,30 @@ export default function About() {
         About me
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-x-28">
-        <p className="text-base md:text-lg leading-relaxed font-sans mb-10">
-          I am a UI/UX designer with a Bachelor&apos;s degree in Computer
-          Science from Coventry University. I currently work as Project Manager
-          and Junior Web Developer at Pocket Nicotine, where I use Figma and
-          Shopify and work with inventory management systems. I am proficient in
-          HTML, CSS, and JavaScript and focus on intuitive, user-centered
-          design. My education and professional experience drive me to deliver
-          exceptional user experiences.
-        </p>
+        <div>
+          <p className="text-base md:text-lg leading-relaxed font-sans">
+            I am a UI/UX designer with a Bachelor&apos;s degree in Computer
+            Science from Coventry University. I currently work as Project
+            Manager and Junior Web Developer at Pocket Nicotine, where I use
+            Figma and Shopify and work with inventory management systems. I am
+            proficient in HTML, CSS, and JavaScript and focus on intuitive,
+            user-centered design. My education and professional experience drive
+            me to deliver exceptional user experiences.
+          </p>
+          {/* Resume */}
+          <a
+            href="/resume/resume.pdf"
+            download
+            className="inline-block mt-6 px-5 py-2 rounded border hover:bg-black hover:text-white ease-in-out duration-200"
+          >
+            <div className="flex gap-2 items-center">
+              Download Resume
+              <Download strokeWidth={1.5} className="w-4 h-4" />
+            </div>
+          </a>
+        </div>
 
+        {/* Accordian */}
         <div className="border-(--foreground)/20">
           <details className="group border-b border-(--foreground)/20">
             <summary className="list-none cursor-pointer py-4 font-sans text-base md:text-lg flex items-center justify-between gap-2">
@@ -69,7 +83,7 @@ export default function About() {
               <ChevronDown className="size-5 shrink-0 text-(--foreground)/60 group-open:rotate-180 transition-transform" />
             </summary>
             <div className="pb-4 pl-0 font-sans text-base text-(--foreground)/90">
-              <ul className="space-y-1">
+              <ul className="flex flex-wrap gap-2 divide-x [&>li]:pr-2">
                 {LANGUAGES.map((lang) => (
                   <li key={lang}>{lang}</li>
                 ))}
@@ -99,6 +113,7 @@ export default function About() {
         </div>
       </div>
 
+      {/* Skill Marquee */}
       <div
         className="overflow-hidden w-full"
         style={{
