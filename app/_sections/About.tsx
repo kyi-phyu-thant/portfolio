@@ -71,13 +71,12 @@ export default function About() {
       <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-x-28 gap-y-10">
         <div>
           <p className="text-base md:text-lg leading-relaxed font-sans">
-            I am a UI/UX designer with a Bachelor&apos;s degree in Computer
-            Science from Coventry University. I currently work as Project
-            Manager and Junior Web Developer at Pocket Nicotine, where I use
-            Figma and Shopify and work with inventory management systems. I am
-            proficient in HTML, CSS, and JavaScript and focus on intuitive,
-            user-centered design. My education and professional experience drive
-            me to deliver exceptional user experiences.
+            I’m a UI/UX Designer with a Computer Science background, focused on
+            creating intuitive and user-centered digital experiences. I have
+            experience designing interfaces with Figma and collaborating across
+            teams to turn ideas into usable products. I’m currently studying at
+            FH Upper Austria (FHOÖ), where I continue to strengthen my design
+            thinking and technical skills.
           </p>
           {/* Resume */}
           <a
