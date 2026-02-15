@@ -15,16 +15,18 @@ const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky md:relative top-0 z-50 bg-white">
+    <header className="sticky top-0 z-50 bg-white">
       <div className="px-6 py-3 md:px-24 md:py-4 flex items-center justify-between">
         {/* Logo */}
-        <Image
-          src="/kate_logo.webp"
-          alt="logo"
-          width={80}
-          height={80}
-          className="w-10 h-10 md:w-16 md:h-16"
-        />
+        <Link href={"/"}>
+          <Image
+            src="/kate_logo.webp"
+            alt="logo"
+            width={80}
+            height={80}
+            className="w-10 h-10 md:w-16 md:h-16"
+          />
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 text-lg">

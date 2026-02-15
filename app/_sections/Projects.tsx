@@ -5,8 +5,6 @@ import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import SectionShell from "../_components/SectionShell";
 
-const PLACEHOLDER_SRC = "/placeholder.svg";
-
 const PROJECTS = [
   {
     id: "nourish-asia",
@@ -168,7 +166,7 @@ export default function Projects() {
 
         {/* Image for the active accordion: first project by default, updates on accordion click */}
         <div
-          className="flex flex-col gap-4 md:sticky md:top-8 self-start"
+          className="flex flex-col gap-4 md:sticky md:top-28 self-start"
           key={activeProject.id}
         >
           <div className="relative aspect-video overflow-hidden rounded-md bg-(--foreground)/5 border">
@@ -176,7 +174,7 @@ export default function Projects() {
               src={activeProject.imageSrc}
               alt={`${activeProject.title} – project image`}
               fill
-              className={`object-cover ${activeProject.id == 'hospital-billing' && 'object-top'}`}
+              className={`object-cover ${activeProject.id == "hospital-billing" && "object-top"}`}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
