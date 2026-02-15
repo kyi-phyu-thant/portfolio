@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
   return (
     <footer
       id="contact"
-      className="px-4 py-6 flex justify-center items-center border-t-2"
+      className="px-4 py-6 flex justify-center items-center border-t-2 border-dashed"
     >
       <div className="flex gap-4 pr-8 text-lg">
         {contactLinks.map((link) => (

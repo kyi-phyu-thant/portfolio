@@ -171,7 +171,7 @@ export default function Projects() {
           className="flex flex-col gap-4 md:sticky md:top-8 self-start"
           key={activeProject.id}
         >
-          <div className="relative aspect-video overflow-hidden rounded-md bg-(--foreground)/5 border-2">
+          <div className="relative aspect-video overflow-hidden rounded-md bg-(--foreground)/5 border">
             <Image
               src={activeProject.imageSrc}
               alt={`${activeProject.title} – project image`}
