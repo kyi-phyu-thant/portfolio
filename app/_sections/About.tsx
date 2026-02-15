@@ -24,7 +24,7 @@ const LANGUAGES = [
   "Japanese",
 ] as const;
 
-const EDUCATION = [
+const EDUCATION_ENTRIES = [
   {
     degree: "Bachelor of Science (Hons) in Computer Science",
     institution: "Coventry University",
@@ -42,6 +42,23 @@ const EDUCATION = [
     institution: "FHOO (Fachhochschule Oberösterreich)",
     when: null,
     where: "Austria",
+  },
+] as const;
+
+type EducationEntry = (typeof EDUCATION_ENTRIES)[number];
+
+const ABOUT_ACCORDION = [
+  {
+    id: "education",
+    title: "Education",
+    type: "education" as const,
+    items: EDUCATION_ENTRIES,
+  },
+  {
+    id: "languages",
+    title: "Language proficiency",
+    type: "languages" as const,
+    items: LANGUAGES,
   },
 ] as const;
 
@@ -75,41 +92,52 @@ export default function About() {
           </a>
         </div>
 
-        {/* Accordian */}
+        {/* Accordion */}
         <div className="border-(--foreground)/20">
-          <details className="group border-b border-(--foreground)/20">
-            <summary className="list-none cursor-pointer py-4 font-sans text-base md:text-lg flex items-center justify-between gap-2">
-              <span>Language proficiency</span>
-              <ChevronDown className="size-5 shrink-0 text-(--foreground)/60 group-open:rotate-180 transition-transform" />
-            </summary>
-            <div className="pb-4 pl-0 font-sans text-base text-(--foreground)/90">
-              <ul className="flex flex-wrap gap-2 divide-x [&>li]:pr-2">
-                {LANGUAGES.map((lang) => (
-                  <li key={lang}>{lang}</li>
-                ))}
-              </ul>
-            </div>
-          </details>
-
-          <details className="group border-b border-(--foreground)/20">
-            <summary className="list-none cursor-pointer py-4 font-sans text-base md:text-lg flex items-center justify-between gap-2">
-              <span>Education</span>
-              <ChevronDown className="size-5 shrink-0 text-(--foreground)/60 group-open:rotate-180 transition-transform" />
-            </summary>
-            <div className="pb-4 pl-0 font-sans text-base text-(--foreground)/90 space-y-4">
-              {EDUCATION.map((entry, i) => (
-                <div key={i}>
-                  <p className="font-medium">{entry.degree}</p>
-                  <p>{entry.institution}</p>
-                  {(entry.when || entry.where) && (
-                    <p className="text-(--foreground)/80">
-                      {[entry.when, entry.where].filter(Boolean).join(" · ")}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </details>
+          {ABOUT_ACCORDION.map((item, index) => (
+            <details
+              key={item.id}
+              className="group border-b border-(--foreground)/20"
+            >
+              <summary className="list-none cursor-pointer py-4 font-sans text-base md:text-lg flex items-center justify-between gap-2">
+                <span className="flex items-center gap-3">
+                  <span className="text-(--foreground)/50 tabular-nums">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-medium">{item.title}</span>
+                </span>
+                <ChevronDown className="size-5 shrink-0 text-(--foreground)/60 group-open:rotate-180 transition-transform" />
+              </summary>
+              <div className="pb-4 pl-0 font-sans text-base text-(--foreground)/90">
+                {item.type === "languages" && (
+                  <ul className="flex flex-wrap gap-2 divide-x [&>li]:pr-2">
+                    {item.items.map((lang) => (
+                      <li key={lang}>{lang}</li>
+                    ))}
+                  </ul>
+                )}
+                {item.type === "education" && (
+                  <div className="space-y-4">
+                    {(item.items as readonly EducationEntry[]).map(
+                      (entry, i) => (
+                        <div key={i}>
+                          <p className="font-medium">{entry.degree}</p>
+                          <p>{entry.institution}</p>
+                          {(entry.when || entry.where) && (
+                            <p className="text-(--foreground)/80">
+                              {[entry.when, entry.where]
+                                .filter(Boolean)
+                                .join(" · ")}
+                            </p>
+                          )}
+                        </div>
+                      ),
+                    )}
+                  </div>
+                )}
+              </div>
+            </details>
+          ))}
         </div>
       </div>
 
