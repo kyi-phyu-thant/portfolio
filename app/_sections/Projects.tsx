@@ -10,7 +10,7 @@ const PLACEHOLDER_SRC = "/placeholder.svg";
 const PROJECTS = [
   {
     id: "nourish-asia",
-    imageSrc: PLACEHOLDER_SRC,
+    imageSrc: "/project/NourishAsia.png",
     title: "NourishAsia Website Project",
     date: "2023 June",
     role: "Full Stack Developer",
@@ -52,7 +52,7 @@ const PROJECTS = [
   {
     id: "sokoban",
     imageSrc: PLACEHOLDER_SRC,
-    title: "Sokoban Gaming Project",
+    title: "Sokoban Game Project",
     date: "2020 December",
     role: "Game Developer",
     description:
@@ -68,26 +68,6 @@ const PROJECTS = [
       "C# for game development, Unity for game asset management, Touch gesture recognition for controls",
     outcome:
       "Successfully delivered a challenging and enjoyable puzzle game with an intuitive interface, receiving positive feedback and gaining popularity among puzzle enthusiasts.",
-  },
-  {
-    id: "online-shopping",
-    imageSrc: PLACEHOLDER_SRC,
-    title: "Online Shopping Website Project",
-    date: "2021 March",
-    role: "UI/UX Designer",
-    description:
-      "The Online Shopping Website Project aimed to create an engaging e-commerce platform. I focused on developing a user-friendly interface.",
-    responsibilities: [
-      "Designed interfaces using Figma for visual appeal and ease of navigation.",
-      "Conducted user research to inform design decisions.",
-      "Created wireframes and prototypes to visualize the layout.",
-      "Collaborated with developers and stakeholders to align with project goals.",
-      "Conducted usability testing to resolve user experience issues.",
-    ],
-    technologies:
-      "Figma for design and prototyping, HTML and CSS for layout and styling, Collaboration tools for project management",
-    outcome:
-      "Delivered a modern, user-friendly platform that enhanced the shopping experience, receiving positive feedback for ease of use and visual appeal.",
   },
   {
     id: "hospital-billing",
@@ -127,7 +107,7 @@ export default function Projects() {
       <h2 className="text-xl md:text-4xl font-sans mb-6 border-b-2 pb-7">
         Projects
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-x-28 gap-y-12 relative">
+      <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] gap-x-10 gap-y-12 relative">
         {/* Left: accordion with project descriptions (one open at a time) */}
         <div className="border-(--foreground)/20">
           <p className="font-sans text-base text-(--foreground)/80 mb-4">
@@ -191,7 +171,7 @@ export default function Projects() {
           className="flex flex-col gap-4 md:sticky md:top-8 self-start"
           key={activeProject.id}
         >
-          <div className="relative aspect-4/3 overflow-hidden rounded-md bg-(--foreground)/5">
+          <div className="relative aspect-video overflow-hidden rounded-md bg-(--foreground)/5 border-2">
             <Image
               src={activeProject.imageSrc}
               alt={`${activeProject.title} – project image`}

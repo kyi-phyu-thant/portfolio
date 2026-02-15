@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white">
+    <header className="sticky md:relative top-0 z-50 bg-white">
       <div className="px-6 py-3 md:px-24 md:py-4 flex items-center justify-between">
         {/* Logo */}
         <Image
