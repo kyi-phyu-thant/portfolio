@@ -10,7 +10,7 @@ const PLACEHOLDER_SRC = "/placeholder.svg";
 const PROJECTS = [
   {
     id: "nourish-asia",
-    imageSrc: "/project/NourishAsia.png",
+    imageSrc: "/projects/NourishAsia.png",
     title: "NourishAsia Website Project",
     date: "2023 June",
     role: "Full Stack Developer",
@@ -31,7 +31,7 @@ const PROJECTS = [
   },
   {
     id: "causeway-point",
-    imageSrc: PLACEHOLDER_SRC,
+    imageSrc: "/projects/Causeway Point small.jpg",
     title: "Causeway Point Shopping Mall Website",
     date: "2022 April",
     role: "Web Designer",
@@ -51,7 +51,7 @@ const PROJECTS = [
   },
   {
     id: "sokoban",
-    imageSrc: PLACEHOLDER_SRC,
+    imageSrc: "/projects/sokoban.png",
     title: "Sokoban Game Project",
     date: "2020 December",
     role: "Game Developer",
@@ -71,7 +71,7 @@ const PROJECTS = [
   },
   {
     id: "hospital-billing",
-    imageSrc: PLACEHOLDER_SRC,
+    imageSrc: "/projects/hospital_billing.png",
     title: "Hospital Billing System",
     date: "2021 March",
     role: "UI/UX Designer",
@@ -176,7 +176,7 @@ export default function Projects() {
               src={activeProject.imageSrc}
               alt={`${activeProject.title} – project image`}
               fill
-              className="object-cover"
+              className={`object-cover ${activeProject.id == 'hospital-billing' && 'object-top'}`}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
