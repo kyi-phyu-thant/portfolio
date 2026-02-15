@@ -64,11 +64,11 @@ const ABOUT_ACCORDION = [
 
 export default function About() {
   return (
-    <SectionShell className="grid gap-20">
+    <SectionShell className="grid gap-10 md:gap-20">
       <h2 className="text-xl md:text-4xl font-sans mb-6 border-b-2 pb-7">
         About me
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-x-28">
+      <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-x-28 gap-y-10">
         <div>
           <p className="text-base md:text-lg leading-relaxed font-sans">
             I am a UI/UX designer with a Bachelor&apos;s degree in Computer

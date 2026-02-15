@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="font-sans">
       <Header />
-      <main>
+      <main className="grid gap-20">
         <Hero />
         <About />
         <Experience />

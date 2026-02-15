@@ -115,8 +115,7 @@ const PROJECTS = [
 // No accordion open by default; image shows first project until user opens one.
 export default function Projects() {
   const [openId, setOpenId] = useState<string | null>(null);
-  const activeProject =
-    PROJECTS.find((p) => p.id === openId) ?? PROJECTS[0];
+  const activeProject = PROJECTS.find((p) => p.id === openId) ?? PROJECTS[0];
 
   const handleSummaryClick = (e: React.MouseEvent, projectId: string) => {
     e.preventDefault();
@@ -124,7 +123,7 @@ export default function Projects() {
   };
 
   return (
-    <SectionShell id="projects" className="grid gap-20">
+    <SectionShell id="projects" className="grid gap-10 md:gap-20">
       <h2 className="text-xl md:text-4xl font-sans mb-6 border-b-2 pb-7">
         Projects
       </h2>

@@ -22,7 +22,7 @@ const EXPERIENCE_ENTRIES = [
 
 export default function Experience() {
   return (
-    <SectionShell id="experience" className="grid gap-20">
+    <SectionShell id="experience" className="grid gap-10 md:gap-20">
       <h2 className="text-xl md:text-4xl font-sans mb-6 border-b-2 pb-7">
         Experience
       </h2>
