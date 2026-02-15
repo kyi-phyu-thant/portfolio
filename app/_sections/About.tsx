@@ -26,6 +26,12 @@ const LANGUAGES = [
 
 const EDUCATION_ENTRIES = [
   {
+    degree: "Currently studying",
+    institution: "FHOO (Fachhochschule Oberösterreich)",
+    when: null,
+    where: "Austria",
+  },
+  {
     degree: "Bachelor of Science (Hons) in Computer Science",
     institution: "Coventry University",
     when: "Aug 2023",
@@ -36,12 +42,6 @@ const EDUCATION_ENTRIES = [
     institution: "NCC Education",
     when: "Nov 2020",
     where: null,
-  },
-  {
-    degree: "Currently studying",
-    institution: "FHOO (Fachhochschule Oberösterreich)",
-    when: null,
-    where: "Austria",
   },
 ] as const;
 

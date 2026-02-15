@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+A modern, mobile-friendly portfolio website built to showcase my UI/UX design work, projects, and background.  
+The site is designed with a strong focus on **usability, SEO best practices, and performance optimization**.
 
-First, run the development server:
+## ✨ Key Highlights
+
+- 📱 **Mobile-first & responsive design**
+- 🔍 **SEO-friendly structure** (semantic HTML, metadata, optimized headings)
+- ⚡ **Performance-tuned** for fast load times
+- 🎨 Clean, user-centered UI/UX design
+- ♻️ Reusable and scalable components
+
+## 📊 Lighthouse Performance Results
+
+The portfolio has been tested using **Google Lighthouse** for both **Desktop** and **Mobile** to ensure strong performance, accessibility, and SEO.
+
+### 🌐 Desktop (Web)
+
+![Lighthouse Desktop Results](./docs/images/web-lighthouse.png)
+
+### 📱 Mobile
+
+![Lighthouse Mobile Results](./docs/images/mobile-lighthouse.png)
+
+These results reflect a strong focus on:
+
+- Performance optimization
+- SEO best practices
+- Accessibility
+- Mobile-first design
+
+## 🛠 Tech Stack
+
+- **Framework:** Next.js
+- **Styling:** Tailwind CSS
+- **Design:** Figma
+- **Icons:** Lucide Icons
+- **Image Optimization:** Next.js Image
+- **Deployment:** Vercel
+
+## 📁 Featured Projects
+
+- **Sokoban Project** – Puzzle game UI and interaction design
+- **Hospital Billing System** – User-centered interface for healthcare billing workflows
+- **Web & UI Design Works** – Selected academic and professional projects
+
+## 🎯 Focus Areas
+
+- Mobile usability and accessibility
+- Search engine visibility and clean metadata
+- Optimized assets and efficient rendering
+- Clear information hierarchy and navigation
+
+## 🚀 Getting Started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 to view the project locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📄 License
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is for personal portfolio use only.
+All content and designs are not intended for redistribution without permission.
