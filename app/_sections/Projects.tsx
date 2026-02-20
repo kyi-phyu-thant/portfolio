@@ -175,6 +175,7 @@ export default function Projects() {
               alt={`${activeProject.title} – project image`}
               fill
               className={`object-cover ${activeProject.id == "hospital-billing" && "object-top"}`}
+              loading="lazy"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
