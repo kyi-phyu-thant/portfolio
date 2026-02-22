@@ -29,12 +29,13 @@ export default function Hero() {
       <div className="flex items-center justify-center md:justify-start relative overflow-hidden">
         <div className="relative w-full aspect-square max-w-lg md:max-w-none md:w-full md:aspect-auto md:h-full min-h-[320px]">
           <Image
-            src="/profile.png"
+            src="/profile.jpg"
             alt="Kyi Phyu Thant"
             fill
             className="object-contain object-center grayscale"
             sizes="(max-width: 768px) 100vw, 45vw"
-            priority
+            loading="lazy"
+            fetchPriority="high"
           />
         </div>
       </div>
